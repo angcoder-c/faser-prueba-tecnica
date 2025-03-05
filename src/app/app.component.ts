@@ -109,4 +109,11 @@ export class AppComponent {
 		})
 		this.service.guardarTareas(this.tareas)
 	}
+
+	// tarea 7
+	// ordenar todas las tareas de forma aleatoria
+	ordenAleatorio () {
+		this.tareas = [...this.tareas].sort(()=>0.5-Math.random())
+		this.service.guardarTareas(this.tareas)
+	}
 }
