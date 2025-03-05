@@ -26,7 +26,10 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let tarea of tareas">
+			<!--ngClass, inserta una clase css cuando la condición es verdadera-->
+			<tr 
+			*ngFor="let tarea of tareas" 
+			[ngClass]="{ 'destacado' : tarea.destacado }">
 				<td>{{ tarea.id }}</td>
 				<td>{{ tarea.titulo }}</td>
 				<td>{{ tarea.minutos }}</td>
@@ -47,6 +50,14 @@
 		(click)="eliminarSeleccionados()"
 		>
 			Eliminar seleccionados
+		</button>
+
+		<!--tarea 6-->
+		<!--destacar los elementos seleccionados-->
+		<button 
+		(click)="seleccionarDestacados()"
+		>
+			Destacar seleccionados
 		</button>
 	</div>
 

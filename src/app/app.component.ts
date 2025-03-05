@@ -32,7 +32,8 @@ export class AppComponent {
 			id : this.tareas.length+1,
 			titulo : titulo,
 			minutos : minutos,
-			seleccionado : false
+			seleccionado : false,
+			destacado : false
 		})
 
 		// actualizar local storage
@@ -92,5 +93,20 @@ export class AppComponent {
 			}
 			return 0
 		})
+	}
+
+	// tarea 6
+	// destacados con estilos
+	seleccionarDestacados () {
+		this.tareas = this.tareas.map(tarea => {
+			// solo se destaca si está seleccionado
+			if (tarea.seleccionado) {
+				tarea.destacado = true
+			} else {
+				tarea.destacado = false
+			}
+			return tarea
+		})
+		this.service.guardarTareas(this.tareas)
 	}
 }
