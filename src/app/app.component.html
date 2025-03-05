@@ -7,6 +7,10 @@
 				<th>Id</th>
 				<th>Titulo</th>
 				<th>Minutos</th>
+				<!--seleccionar todas las tareas-->
+				<th>
+					<input type="checkbox" [checked]="isSeleccionados()" (change)="seleccionarTodo($event)">
+				</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -14,6 +18,12 @@
 				<td>{{ tarea.id }}</td>
 				<td>{{ tarea.titulo }}</td>
 				<td>{{ tarea.minutos }}</td>
+				<td>
+					<input 
+					type="checkbox" 
+					[(ngModel)]="tarea.seleccionado" 
+					(change)="actualizarEstadoChecked($event, tarea.id)">
+				</td>
 			</tr>
 		</tbody>
 	</table>
