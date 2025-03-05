@@ -1,4 +1,10 @@
 # Prueba técnica - Estudio Faser
+
+## Resultado
+
+![Untitledvideo-MadewithClipchamp-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/41235f4d-cc57-4fe0-9395-ac9b8d30d5e3)
+
+
 ## Instalación
 1. Hacer un fork de este repositorio en su cuenta de Github, que sea público.
 2. Clonar su fork en su equipo local.
