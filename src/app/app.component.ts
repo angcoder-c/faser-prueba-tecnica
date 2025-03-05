@@ -65,4 +65,11 @@ export class AppComponent {
 	isSeleccionados () {
 		return this.tareas.every(tarea=>tarea.seleccionado)
 	}
+
+	// tarea 4
+	// eliminar tareas seleccionadas
+	eliminarSeleccionados () {
+		this.tareas = this.tareas.filter(tarea=>!tarea.seleccionado)
+		this.service.guardarTareas(this.tareas)
+	}
 }

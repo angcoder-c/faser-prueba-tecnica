@@ -28,6 +28,16 @@
 		</tbody>
 	</table>
 
+	<div>
+		<!--tarea 4-->
+		<!--eliminar tareas seleccionadas-->
+		<button 
+		(click)="eliminarSeleccionados()"
+		>
+			Eliminar seleccionados
+		</button>
+	</div>
+
 	<form (submit)="nuevaTarea(titulo.value, minutos.value)">
 		<!--titulo-->
 		<label>Titulo</label>
