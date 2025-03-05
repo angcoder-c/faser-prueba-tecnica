@@ -4,9 +4,21 @@
 	<table>
 		<thead>
 			<tr>
-				<th>Id</th>
-				<th>Titulo</th>
-				<th>Minutos</th>
+				<th
+				(click)="ordenar({prop : 'id'})"
+				>
+					Id
+				</th>
+				<th
+				(click)="ordenar({prop : 'titulo'})"
+				>
+					Titulo
+				</th>
+				<th
+				(click)="ordenar({prop : 'minutos'})"
+				>
+					Minutos
+				</th>
 				<!--seleccionar todas las tareas-->
 				<th>
 					<input type="checkbox" [checked]="isSeleccionados()" (change)="seleccionarTodo($event)">

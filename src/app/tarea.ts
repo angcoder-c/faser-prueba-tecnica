@@ -7,3 +7,9 @@ export class Tarea {
         public seleccionado : boolean = false
     ){}
 }
+
+// funcion de ordenamiento Props
+export type ordenamientoProps = 
+ | { prop : 'id' }
+ | { prop : 'titulo' }
+ | { prop : 'minutos' }

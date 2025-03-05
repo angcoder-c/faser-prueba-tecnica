@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
 import { Tarea } from './tarea';
+import { ordenamientoProps } from './tarea';
 
 @Component({
 	selector: 'app-root',
@@ -9,10 +10,12 @@ import { Tarea } from './tarea';
 })
 export class AppComponent {
 	tareas: Tarea[];
+	ascendente = true
 
 	constructor(
         public service: AppService,
-	) { }
+	) {
+	 }
 	
 	ngOnInit() {
 		this.obtenerTareas();
@@ -71,5 +74,23 @@ export class AppComponent {
 	eliminarSeleccionados () {
 		this.tareas = this.tareas.filter(tarea=>!tarea.seleccionado)
 		this.service.guardarTareas(this.tareas)
+	}
+
+	// tarea 5
+	// ordenar ascendente o descendente al dar click en los encabezados
+	ordenar ({prop} : ordenamientoProps) {
+		// cambia el estado con cada click
+		this.ascendente = !this.ascendente
+		this.tareas
+		.sort((a, b) => {
+			if (a[prop] > b[prop]) {
+				return this.ascendente ? -1 : 1
+			}
+
+			if (a[prop] < b[prop]) {
+				return this.ascendente ? 1 : -1
+			}
+			return 0
+		})
 	}
 }
