@@ -21,4 +21,16 @@ export class AppComponent {
 	async obtenerTareas() {
 		this.tareas = await this.service.obtenerTareas();
 	}
+
+	nuevaTarea (titulo : string, minutos : number) {
+		// nueva tarea
+		this.tareas.push({
+			id : this.tareas.length+1,
+			titulo : titulo,
+			minutos : minutos
+		})
+
+		// actualizar local storage
+		this.service.guardarTareas(this.tareas)
+	}
 }
